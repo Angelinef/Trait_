@@ -19,7 +19,7 @@ public class HoldExpo_ implements PlugIn {
 		ImageConverter icg = new ImageConverter(imp);
 		icg.convertToGray8();
 		imp.updateAndDraw();
-		
+		 
 		//On dupplique l'image en 3 fois 
 		ImagePlus imp1 = new Duplicator().run(imp);
 		ImagePlus imp3 = new Duplicator().run(imp);
