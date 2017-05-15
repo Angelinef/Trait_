@@ -53,5 +53,5 @@ public class AdPLT_ implements PlugIn {
 		imp2.show();
 		impD.close();
 	}
-
+// Test modification
 }
