@@ -25,7 +25,7 @@ public class GPLT_ implements PlugIn {
 			IJ.error("PlugIn canceled!");
 			return;
 		}
-
+ 
 		radius = gd.getNextNumber();
 		gamma = gd.getNextNumber();
 		//image originale

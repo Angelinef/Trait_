@@ -16,7 +16,7 @@ public class APLT_ implements PlugIn {
 		GenericDialog gd = new GenericDialog("ADPLT settings");
 
 		gd.addNumericField("radius:",radius,2);
-
+ 
 		gd.showDialog();
 
 		if (gd.wasCanceled()) {
