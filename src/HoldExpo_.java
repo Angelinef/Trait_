@@ -13,7 +13,7 @@ public class HoldExpo_ implements PlugIn {
   
 		//image originale
 		ImagePlus imp = IJ.getImage();
-		imp.setTitle("Image intiale");
+		//imp.setTitle("Image intiale");
  
 		// conversion de l'image en 8 bits
 		ImageConverter icg = new ImageConverter(imp);

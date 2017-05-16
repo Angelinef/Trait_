@@ -7,10 +7,10 @@ import java.lang.Double;
 
 public class AdPLT_ implements PlugIn {
 
-	private double g;
-	private double c;
-	private double k;
-	private double radius;
+	private double g = 1.25;
+	private double c = 1;
+	private double k = 5;
+	private double radius =10;
 
 	public void run(String arg) {
 
@@ -67,10 +67,13 @@ public class AdPLT_ implements PlugIn {
 		for(int i=0; i<pixels.length; i++){
 			result[i]=(float)(c*(1+k*d[i]) * Math.pow((double)(pixelsNormalised[i]) , (double) g*(1-k*d[i])));
 		}
+		
+		
 
 		imp2.setProcessor(new FloatProcessor(width, height,result));
-		IJ.run(imp2, "Enhance Contrast", "saturated=0.35");
+		//IJ.run(imp2, "Enhance Contrast", "saturated=0.35");
 		imp2.show();
+		imp2.setTitle("APLT");
 	}
 
 }
