@@ -5,19 +5,17 @@ import ij.plugin.*;
 import java.lang.Double;
 
 
-public class GPLT_ implements PlugIn {
+public class APLT_ implements PlugIn {
 
 
 	private double radius =2;
-	private double gamma = 2;
 
 	public void run(String arg) {
 
 		// Boite de dialogue pour les parametres
 		GenericDialog gd = new GenericDialog("ADPLT settings");
 
-		gd.addNumericField("Radius:",radius,2);
-		gd.addNumericField("Gamma:",gamma,2);
+		gd.addNumericField("radius:",radius,2);
 
 		gd.showDialog();
 
@@ -27,7 +25,7 @@ public class GPLT_ implements PlugIn {
 		}
 
 		radius = gd.getNextNumber();
-		gamma = gd.getNextNumber();
+
 		//image originale
 		ImagePlus imp = IJ.getImage();
 		int width=imp.getWidth();
@@ -61,12 +59,12 @@ public class GPLT_ implements PlugIn {
 		float[] result = new float [d.length];
 		
 		for(int i=0; i<pixels.length; i++){
-			result[i]= (float) Math.pow((double)pixelsNormalised[i],gamma);
+			result[i]= (float) Math.pow((double)pixelsNormalised[i],(double) Math.log((double) (1/d[i])));
 			
 		}
 		imp1.setProcessor(new FloatProcessor(width, height,result));
 		imp1.show();
-		imp1.setTitle("GPLT");
+		imp1.setTitle("APLT");
 	}
 
 }
