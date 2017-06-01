@@ -64,7 +64,7 @@ public class AdPLT_ implements PlugIn {
 		float[] result = new float [d.length];
 
 		//compute the transform
-		for(int i=0; i<pixels.length; i++){
+		for(int i=0; i<pixels.length; i++){ 
 			result[i]=(float)(c*(1+k*d[i]) * Math.pow((double)(pixelsNormalised[i]) , (double) g*(1-k*d[i])));
 		}
 		
@@ -73,7 +73,7 @@ public class AdPLT_ implements PlugIn {
 		imp2.setProcessor(new FloatProcessor(width, height,result));
 		//IJ.run(imp2, "Enhance Contrast", "saturated=0.35");
 		imp2.show();
-		imp2.setTitle("APLT");
+		imp2.setTitle("APLT"+" "+"c="+c+" "+"g="+g+" "+"k="+k+" "+"r="+radius);  
 	}
 
 }
